@@ -51,10 +51,12 @@ class MainActivity : AppCompatActivity() {
         // Set up Action Bar
         val navController = host.navController
 
+
         appBarConfiguration = AppBarConfiguration(navController.graph)
 
         val drawerLayout: DrawerLayout? = findViewById(R.id.drawer_layout)
         appBarConfiguration = AppBarConfiguration(setOf(R.id.home_dest, R.id.deeplink_dest), drawerLayout)
+        toolbar.setupWithNavController(navController,appBarConfiguration)
 
         setupActionBar(navController, appBarConfiguration)
 
